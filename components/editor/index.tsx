@@ -28,7 +28,7 @@ interface Props {
   busy?: boolean;
   onSubmit(post: FinalPost): void;
 }
-
+3;
 const Editor: FC<Props> = ({
   initialValue,
   btnTitle = "Submit",
