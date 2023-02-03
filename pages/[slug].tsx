@@ -10,14 +10,22 @@ import dbConnect from "../lib/dbConnect";
 import Post from "../models/Post";
 import Image from "next/image";
 import dateFormat from "dateformat";
-import { MdOutlineHorizontalRule } from "react-icons/md";
-import { TbMinusVertical } from "react-icons/tb";
+import Comments from "../components/common/Comments";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const SinglePost: NextPage<Props> = ({ post }) => {
-  const { title, content, tags, meta, slug, thumbnail, createdAt, category } =
-    post;
+  const {
+    id,
+    title,
+    content,
+    tags,
+    meta,
+    slug,
+    thumbnail,
+    createdAt,
+    category,
+  } = post;
   return (
     <DefaultLayout title={title} desc={meta}>
       <div className="pb-20 mx-2">
@@ -29,7 +37,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
 
         <div>
           <h3 className="text-base font-semibold text-[#DC143C]">{category}</h3>
-          <div className="w-6 h-[3px] bg-[#DC143C]" />
+          <div className="w-6 h-[3.5px] bg-[#DC143C]" />
         </div>
         <div className="mt-2 border-l-[3.5px] border-l-[#DC143C]">
           <h1 className="text-3xl sm:text-5xl font-semibold text-primary-dark dark:text-primary py-2 pl-1">
@@ -49,6 +57,8 @@ const SinglePost: NextPage<Props> = ({ post }) => {
         <div className="prose prose-lg dark:prose-invert max-w-full mx-auto">
           {parse(content)}
         </div>
+
+        <Comments belongsTo={id} />
       </div>
     </DefaultLayout>
   );
@@ -122,6 +132,7 @@ export const getStaticProps: GetStaticProps<
           createdAt: createdAt.toString(),
         },
       },
+      revalidate: 60,
     };
   } catch (error) {
     return { notFound: true };

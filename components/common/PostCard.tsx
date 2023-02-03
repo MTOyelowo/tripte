@@ -25,7 +25,7 @@ const PostCard: FC<Props> = ({
 }): JSX.Element => {
   const { title, slug, meta, tags, thumbnail, createdAt, category } = post;
   return (
-    <div className="rounded justify-center items-center bg-primary dark:bg-primary-dark flex flex-row border-b p-4 space-x-4 w-full my-4 sm:border-l ">
+    <div className="justify-center items-center bg-primary dark:bg-primary-dark flex flex-row border-b p-4 space-x-4 w-full my-4 sm:border-l sm:border-b-0">
       <div className="rounded">
         {!thumbnail ? (
           <div className="w-full h-full flex items-center justify-center text-secondary-dark opacity-50 font-semibold italic">

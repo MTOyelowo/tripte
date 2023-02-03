@@ -79,10 +79,10 @@ const Editor: FC<Props> = ({
       }),
       Placeholder.configure({ placeholder: "Type Something" }),
       YouTube.configure({
-        width: 840,
-        height: 472.5,
+        // width: 426,
+        // height: 240,
         HTMLAttributes: {
-          class: "mx-auto rounded",
+          class: "w-full aspect-video",
         },
       }),
       TipTapImage.configure({

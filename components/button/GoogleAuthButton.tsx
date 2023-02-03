@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { signIn } from "next-auth/react";
 import { FC, useCallback } from "react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 
@@ -18,8 +19,16 @@ export const GoogleAuthButton: FC<Props> = ({
     if (lightOnly) return "text-primary bg-[#DC143C]";
     return "dark:text-primary-dark text-primary";
   }, [lightOnly]);
+
+  const handleClick = async () => {
+    await signIn("github");
+  };
+
   return (
-    <button onClick={onClick} className={classNames(commonClasses, getStyle())}>
+    <button
+      onClick={handleClick}
+      className={classNames(commonClasses, getStyle())}
+    >
       <span>Continue with</span>
       <AiFillGoogleCircle size={24} />
     </button>

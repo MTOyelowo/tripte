@@ -18,7 +18,7 @@ const Button: FC<Props> = ({
 }): JSX.Element => {
   const getActiveStyle = useCallback((): string => {
     if (active)
-      return "dark:bg-primary dark:text-primary-dark bg-primary-dark text-primary";
+      return "dark:bg-primary dark:text-white bg-[#DC143C] text-primary";
     else return "text-secondary-light bg-secondary-dark ";
   }, [active]);
 
