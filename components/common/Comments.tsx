@@ -188,7 +188,7 @@ const Comments: FC<Props> = ({ belongsTo }): JSX.Element => {
           <h3 className="text-secondary-dark text-xl font-semibold">
             Log in to add comment
           </h3>
-          <GoogleAuthButton />
+          <GoogleAuthButton lightOnly />
         </div>
       )}
 

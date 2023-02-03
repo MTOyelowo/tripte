@@ -61,8 +61,8 @@ export const isAdmin = async (req: NextApiRequest, res: NextApiResponse) => {
 export const isAuth = async (req: NextApiRequest, res: NextApiResponse) => {
     const session = await unstable_getServerSession(req, res, authOptions)
 
-    const user = session?.user
-    if (user) return user as UserProfile;
+    const user = session?.user as UserProfile
+    if (user) return user;
 };
 
 const getLikedByOwner = (likes: any[], user: UserProfile) => likes.includes(user.id)

@@ -33,10 +33,6 @@ const UserNav: FC<Props> = (props): JSX.Element => {
 
   const { toggleTheme } = useDarkMode();
 
-  const handleLoginWithGoogle = async () => {
-    await signIn("google");
-  };
-
   const dropDownOptions: dropDownOptions = isAdmin
     ? [
         {
@@ -70,7 +66,7 @@ const UserNav: FC<Props> = (props): JSX.Element => {
               head={<ProfileHead nameInitial="M" lightOnly />}
             />
           ) : (
-            <GoogleAuthButton lightOnly onClick={handleLoginWithGoogle} />
+            <GoogleAuthButton lightOnly />
           )}
         </div>
       </nav>

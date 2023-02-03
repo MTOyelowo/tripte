@@ -5,23 +5,19 @@ import { AiFillGoogleCircle } from "react-icons/ai";
 
 interface Props {
   lightOnly?: boolean;
-  onClick?(): void;
 }
 
 const commonClasses =
   " flex items-center justify-center space-x-1 px-3 py-2 rounded hover:scale-[0.97] transition duration-100";
 
-export const GoogleAuthButton: FC<Props> = ({
-  lightOnly,
-  onClick,
-}): JSX.Element => {
+export const GoogleAuthButton: FC<Props> = ({ lightOnly }): JSX.Element => {
   const getStyle = useCallback(() => {
     if (lightOnly) return "text-primary bg-[#DC143C]";
     return "dark:text-primary-dark text-primary";
   }, [lightOnly]);
 
   const handleClick = async () => {
-    await signIn("github");
+    await signIn("google");
   };
 
   return (
