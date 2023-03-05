@@ -8,7 +8,7 @@ interface Props {
 }
 
 const commonClasses =
-  " flex items-center justify-center space-x-1 px-3 py-2 rounded hover:scale-[0.97] transition duration-100";
+  " flex items-center justify-center space-x-1 px-1 py-1 rounded hover:scale-[0.97] transition duration-100";
 
 export const GoogleAuthButton: FC<Props> = ({ lightOnly }): JSX.Element => {
   const getStyle = useCallback(() => {
@@ -25,8 +25,8 @@ export const GoogleAuthButton: FC<Props> = ({ lightOnly }): JSX.Element => {
       onClick={handleClick}
       className={classNames(commonClasses, getStyle())}
     >
-      <span>Continue with</span>
-      <AiFillGoogleCircle size={24} />
+      <span className="text-xs">Continue with</span>
+      <AiFillGoogleCircle size={20} />
     </button>
   );
 };

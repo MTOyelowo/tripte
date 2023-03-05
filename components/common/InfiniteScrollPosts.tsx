@@ -64,7 +64,7 @@ const InfiniteScrollPosts: FC<Props> = ({
         loader={loader || defaultLoader}
       >
         <div className="max-w-4xl mx-auto p-3">
-          <div className="flex-row md:grid sm:gap-4 sm:grid-flow-col pb-20">
+          <div className="flex-row md:grid sm:gap-4 md:grid-cols-2 md:gap-4 pb-20">
             {posts.map((post, index) => (
               <PostCard
                 key={post.slug}
