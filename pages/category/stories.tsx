@@ -66,7 +66,7 @@ const Stories: NextPage<Props> = ({ posts }) => {
           />
         ) : (
           <h1 className="text-[16px] text-center text-gray-500 animate-pulse">
-            Sorry!!! No {category} Available!!!
+            Sorry!!! No Stories Available!!!
           </h1>
         )}
       </div>

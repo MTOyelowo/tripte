@@ -25,7 +25,7 @@ const PostCard: FC<Props> = ({
 }): JSX.Element => {
   const { title, slug, meta, tags, thumbnail, createdAt, category } = post;
   return (
-    <div className="justify-center items-center bg-primary dark:bg-primary-dark flex flex-row border-b dark:border-gray-700 p-4 space-x-4 w-full my-4 even:md:border-l md:border-b-0">
+    <div className="justify-center items-center bg-primary dark:bg-primary-dark flex flex-row border-b dark:border-gray-700 p-4 space-x-4 w-full my-2 even:md:border-l md:border-b-0">
       <div className="rounded">
         {!thumbnail ? (
           <div className="w-full h-full flex items-center justify-center text-secondary-dark opacity-50 font-semibold italic">
@@ -71,19 +71,19 @@ const PostCard: FC<Props> = ({
         </Link>
 
         {controls && (
-          <div className="flex justify-end items-center h-8 mt-auto space-x-4 text-[#DC143C]">
+          <div className="flex justify-end items-center h-6 mt-auto space-x-4 text-[#DC143C]">
             {busy ? (
               <span className="animate-pulse">Removing Post...</span>
             ) : (
               <>
                 <Link href={"/admin/posts/update/" + slug}>
-                  <span className="hover:bg-[#DC143C] hover:px-4 hover:py-1 hover:text-white hover:rounded-full">
+                  <span className="hover:bg-[#DC143C] hover:px-4 hover:py-1 hover:text-white hover:rounded-full text-sm">
                     Edit
                   </span>
                 </Link>
                 <button
                   onClick={onDeleteClick}
-                  className="hover:bg-[#DC143C] hover:px-4 hover:py-1 hover:text-white hover:rounded-full"
+                  className="hover:bg-[#DC143C] hover:px-4 hover:py-1 hover:text-white hover:rounded-full text-sm"
                 >
                   Delete
                 </button>
