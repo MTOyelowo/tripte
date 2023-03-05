@@ -37,6 +37,110 @@ export const readPostsFromDb = async (limit: number, pageNo: number, skip?: numb
     return posts
 }
 
+export const readArticlePostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Article" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readPoetryPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Poetry" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readEssayPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Essay" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readStoryPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Story" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readThoughtPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Thought" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readOpinionPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Opinion" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readPicturePostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Picture" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
+export const readPlayPostsFromDb = async (limit: number, pageNo: number, skip?: number) => {
+    if (!limit || limit > 10) throw Error("Please use a limity under 10 and a valid page number")
+    const finalSkip = skip || limit * pageNo;
+    await dbConnect()
+    const posts = await Post.find({ category: "Play" })
+        .sort({ createdAt: "desc" })
+        .select("-content")
+        .skip(finalSkip)
+        .limit(limit)
+
+    return posts
+}
+
 export const formatPosts = (posts: PostModelSchema[]): PostDetail[] => {
     return posts.map((post) => ({
         id: post._id.toString(),

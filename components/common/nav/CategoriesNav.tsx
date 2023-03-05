@@ -22,7 +22,8 @@ const CategoriesNav: FC<Props> = (props): JSX.Element => {
           <div key={category + index}>
             <Link
               href={{
-                pathname: "/category/" + category,
+                pathname: "/category/" + category.toLowerCase(),
+                query: category,
               }}
             >
               <div className="last:pr-20 cursor-pointer transition text-[#DC143C] text-sm duration-100 transform hover:scale-125 hover:text-[#6E0A1E] dark:hover:text-[#EF4E6E]">
