@@ -22,7 +22,7 @@ export interface UserProfile {
     id: string;
     name: string;
     email: string;
-    avatar: string | undefined;
+    image: string | undefined;
     role: "user" | "admin";
 }
 
@@ -36,5 +36,20 @@ export interface CommentResponse {
     replies?: replyComments;
     repliedTo?: string;
     chiefComment?: boolean;
-    owner: { name: string; id: string; avatar?: string };
+    owner: { name: string; id: string; image?: string };
+}
+
+export interface LatestComment {
+    id: string;
+    content: string;
+    belongsTo: { id: string, title: string, slug: string };
+    owner: { name: string; id: string; image?: string };
+}
+
+export interface LatestUserProfile {
+    id: string;
+    name: string;
+    image?: string;
+    provider: string;
+    email: string;
 }

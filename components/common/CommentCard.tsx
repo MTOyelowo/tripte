@@ -32,7 +32,7 @@ const CommentCard: FC<Props> = ({
 }): JSX.Element => {
   const { owner, content, createdAt, likedByOwner, likes, chiefComment } =
     comment;
-  const { name, avatar } = owner;
+  const { name, image } = owner;
 
   const [showForm, setShowForm] = useState(false);
   const [initialState, setInitialState] = useState("");
@@ -65,7 +65,7 @@ const CommentCard: FC<Props> = ({
 
   return (
     <div className="flex space-x-3 p-2 rounded-2xl bg-[#FDEDF1] dark:bg-[#9D0F2B]">
-      <ProfileIcon nameInitial={name[0].toUpperCase()} avatar={avatar} />
+      <ProfileIcon nameInitial={name[0].toUpperCase()} image={image} />
 
       <div className="flex-1">
         <div className="flex space-x-2 items-baseline">

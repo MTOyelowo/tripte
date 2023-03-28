@@ -30,7 +30,7 @@ const AdminLayout: FC<Props> = ({ children, title }): JSX.Element => {
       <AppHead title={title} />
       <div className="flex">
         <AdminNav navItems={navItems} />
-        <div className="flex-1 p-4 dark:bg-primary-dark bg-primary">
+        <div className="flex-1 p-4 dark:bg-primary-dark bg-primary font-serif">
           <AdminSecondaryNav />
           {children}
         </div>

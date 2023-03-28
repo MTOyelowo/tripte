@@ -6,18 +6,18 @@ import ProfileIcon from "./ProfileIcon";
 
 interface Props {
   lightOnly?: boolean;
-  avatar?: string;
+  image?: string;
   nameInitial?: string;
 }
 
 const ProfileHead: FC<Props> = ({
   lightOnly,
-  avatar,
+  image,
   nameInitial,
 }): JSX.Element => {
   return (
     <div className="flex items-center">
-      <ProfileIcon avatar={avatar} nameInitial={nameInitial} lightOnly />
+      <ProfileIcon image={image} nameInitial={nameInitial} lightOnly />
       <AiFillCaretDown
         className={
           lightOnly ? "text-primary" : "text-primary-dark dark:text-primary"

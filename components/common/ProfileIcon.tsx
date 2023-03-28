@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FC, useCallback } from "react";
 
 interface Props {
-  avatar?: string;
+  image?: string;
   nameInitial?: string;
   lightOnly?: boolean;
 }
@@ -13,7 +13,7 @@ const commonClasses =
 
 const ProfileIcon: FC<Props> = ({
   nameInitial,
-  avatar,
+  image,
   lightOnly,
 }): JSX.Element => {
   const getStyle = useCallback(() => {
@@ -24,11 +24,7 @@ const ProfileIcon: FC<Props> = ({
 
   return (
     <div className={classNames(commonClasses, getStyle())}>
-      {avatar ? (
-        <Image src={avatar} layout="fill" alt="Profile" />
-      ) : (
-        nameInitial
-      )}
+      {image ? <Image src={image} layout="fill" alt="Profile" /> : nameInitial}
     </div>
   );
 };

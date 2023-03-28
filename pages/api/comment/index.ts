@@ -36,13 +36,13 @@ const readComments: NextApiHandler = async (req, res) => {
     const comments = await Comment.find({ belongsTo })
         .populate({
             path: "owner",
-            select: "name avatar"
+            select: "name image"
         })
         .populate({
             path: "replies",
             populate: {
                 path: "owner",
-                select: "name avatar"
+                select: "name image"
             }
         })
 

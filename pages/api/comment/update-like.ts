@@ -31,13 +31,13 @@ const updateLike: NextApiHandler = async (req, res) => {
     const comment = await Comment.findById(commentId)
         .populate({
             path: "owner",
-            select: "name avatar"
+            select: "name image"
         })
         .populate({
             path: "replies",
             populate: {
                 path: "owner",
-                select: "name avatar"
+                select: "name image"
             },
         })
 
