@@ -7,10 +7,7 @@
   }
 
   /*custom scroll css*/
-  .custom-scroll-bar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
+  
 
   /* Handle */
   .custom-scroll-bar::-webkit-scrollbar-thumb {
@@ -20,3 +17,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+

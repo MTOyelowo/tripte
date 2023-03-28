@@ -16,8 +16,8 @@ const categories = [
 
 const CategoriesNav: FC<Props> = (props): JSX.Element => {
   return (
-    <nav className="relative pt-2 w-full bg-white dark:bg-primary-dark">
-      <div className="flex px-10 sm:px-20 text-xl whitespace-nowrap pb-3 sm:space-x-10 overflow-x-scroll scrollbar-hide">
+    <nav className="relative pt-2 w-full bg-white dark:bg-primary-dark group">
+      <div className="flex px-10 sm:px-20 text-xl whitespace-nowrap pb-3 sm:space-x-10 overflow-x-scroll scrollbar-hide group-hover:scrollbar-default">
         {categories.map((category, index) => (
           <div key={category + index}>
             <Link
