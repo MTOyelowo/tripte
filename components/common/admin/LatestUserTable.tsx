@@ -1,3 +1,4 @@
+import { trimText } from "@/utils/helper";
 import { profile } from "console";
 import { FC } from "react";
 import { LatestUserProfile } from "../../../utils/types";
@@ -12,7 +13,7 @@ const LatestUserTable: FC<Props> = ({ users }): JSX.Element => {
     <div>
       <table className="w-full text-left text-primary-dark, dark:text-primary">
         <tbody>
-          <tr className="text-left bg-[#4E0715] text-primary">
+          <tr className="text-left bg-[#4E0715] text-primary min-w-fit text-sm">
             <th className="p-2">Profile</th>
             <th className="p-2">Email</th>
             <th className="p-2">Provider</th>
@@ -20,14 +21,17 @@ const LatestUserTable: FC<Props> = ({ users }): JSX.Element => {
 
           {users?.map((profile) => {
             return (
-              <tr className="border-b border-b-[#F8B8C5]" key={profile.id}>
+              <tr
+                className="border-b border-b-[#F8B8C5] text-sm"
+                key={profile.id}
+              >
                 <td className="py-2">
                   <div className="flex items-center space-x-2">
                     <ProfileIcon
                       nameInitial={profile.name[0].toUpperCase()}
                       image={profile.image}
                     />
-                    <p>{profile.name}</p>
+                    <p>{trimText(profile.name.toString(), 20)}</p>
                   </div>
                 </td>
                 <td className="p-2">{profile.email}</td>
