@@ -8,6 +8,8 @@ export interface UserModelSchema {
     role: "user" | "admin";
     provider: "google";
     image?: string;
+    twitter?: string;
+    facebook?: string;
 
 }
 
@@ -32,7 +34,12 @@ const UserSchema = new Schema<UserModelSchema>({
     },
     image: {
         type: String,
-
+    },
+    twitter: {
+        type: String,
+    },
+    facebook: {
+        type: String,
     }
 
 },

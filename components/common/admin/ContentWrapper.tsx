@@ -13,7 +13,7 @@ const ContentWrapper: FC<Props> = ({
   seeAllRoute,
 }): JSX.Element => {
   return (
-    <div className="flex flex-col min-w-[300px] bg-[#FDEDF1] dark:bg-[#4E0715] p-2 rounded-xl">
+    <div className="flex flex-col min-w-[300px] bg-[#FDEDF1] dark:bg-[#DC143C] p-2 rounded-xl">
       <h3 className="text-xl dark:text-primary text-primary-dark font-semibold py-2 transition">
         {title}
       </h3>

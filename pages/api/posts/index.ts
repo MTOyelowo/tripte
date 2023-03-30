@@ -4,7 +4,7 @@ import { NextApiHandler } from "next";
 import { unstable_getServerSession } from "next-auth";
 import cloudinary from "../../../lib/cloudinary";
 import dbConnect from "../../../lib/dbConnect";
-import { formatPosts, isAdmin, readFile, readPostsFromDb } from "../../../lib/utils";
+import { formatPosts, isAdmin, isAuth, readFile, readPostsFromDb } from "../../../lib/utils";
 import { postValidationSchema, validateSchema } from "../../../lib/validator";
 import Post from "../../../models/Post";
 import { IncomingPost, UserProfile } from "../../../utils/types";
@@ -25,6 +25,10 @@ const handler: NextApiHandler = async (req, res) => {
 const createNewPost: NextApiHandler = async (req, res) => {
     const admin = await isAdmin(req, res);
     if (!admin) return res.status(401).json({ error: "Unauthorized Request!" });
+
+    const user = await isAuth(req, res);
+
+    if (!admin || !user) return res.status(401).json({ error: "Unauthorized Request!" });
 
     const { files, body } = await readFile<IncomingPost>(req)
     // convert tags from string form to array
@@ -48,6 +52,7 @@ const createNewPost: NextApiHandler = async (req, res) => {
         slug,
         meta,
         tags,
+        author: user.id
     });
 
     // Uploading thumbnail if there is any

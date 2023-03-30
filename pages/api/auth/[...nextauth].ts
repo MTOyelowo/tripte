@@ -23,6 +23,8 @@ export const authOptions: NextAuthOptions = {
                     name: profile.name,
                     image: profile.picture,
                     role: "user",
+                    twitter: "",
+                    facebook: "",
                 };
                 // store new user inside the db
                 if (!oldUser) {
@@ -56,6 +58,8 @@ export const authOptions: NextAuthOptions = {
                 email: user.email,
                 image: user.image,
                 role: user.role,
+                twitter: user.twitter,
+                facebook: user.facebook,
             } as any
             return session;
 

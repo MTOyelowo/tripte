@@ -41,6 +41,12 @@ const UserNav: FC<Props> = (props): JSX.Element => {
             router.push("/admin");
           },
         },
+        {
+          label: "Profile",
+          onClick() {
+            router.push("/admin/myprofile");
+          },
+        },
         ...defaultOptions,
       ]
     : defaultOptions;
@@ -50,7 +56,7 @@ const UserNav: FC<Props> = (props): JSX.Element => {
       <nav className="flex w-full justify-between">
         <Link href="/">
           <div className="flex space-x-2 text-highlight-dark items-center">
-            <Logo className="" />
+            <Logo className="md:w-8 md:h-8 w-5 h-5" />
           </div>
         </Link>
         <div className="flex items-center space-x-5">
@@ -63,7 +69,13 @@ const UserNav: FC<Props> = (props): JSX.Element => {
           {isAuth ? (
             <DropdownOptions
               options={dropDownOptions}
-              head={<ProfileHead nameInitial="M" lightOnly />}
+              head={
+                <ProfileHead
+                  nameInitial={profile?.name[0].toUpperCase()}
+                  image={profile?.image}
+                  lightOnly
+                />
+              }
             />
           ) : (
             <GoogleAuthButton lightOnly />

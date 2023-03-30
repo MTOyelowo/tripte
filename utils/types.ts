@@ -7,6 +7,7 @@ export interface PostDetail {
     tags: string[]
     thumbnail?: string
     createdAt: string
+
 }
 
 export interface IncomingPost {
@@ -24,6 +25,8 @@ export interface UserProfile {
     email: string;
     image: string | undefined;
     role: "user" | "admin";
+    twitter: string | undefined;
+    facebook: string | undefined
 }
 
 export type replyComments = CommentResponse[];

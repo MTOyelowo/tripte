@@ -14,7 +14,7 @@ const DefaultLayout: FC<Props> = ({ children, title, desc }): JSX.Element => {
     <>
       <AppHead title={title} desc={desc} />
       <div className="min-h-screen bg-primary dark:bg-primary-dark transition">
-        <div className="sticky top-0 z-10 font-serif">
+        <div className="font-serif">
           <UserNav />
           <CategoriesNav />
         </div>

@@ -20,7 +20,9 @@ const LatestPostListCard: FC<Props> = ({
       <h1 className="font-semibold text-sm text-primary-dark dark:text-primary transition">
         {trimText(title, 50)}
       </h1>
-      <p className="text-sm text-secondary-dark">{trimText(meta, 100)}</p>
+      <p className="text-sm text-secondary-dark dark:text-gray-300">
+        {trimText(meta, 100)}
+      </p>
 
       <div className="flex items-center justify-end space-x-3">
         <Link href={"/admin/posts/update/" + slug}>

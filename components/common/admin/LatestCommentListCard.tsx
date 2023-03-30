@@ -20,14 +20,16 @@ const LatestCommentListCard: FC<Props> = ({ comment }): JSX.Element => {
       <div className="flex-1">
         <p className="font-semibold text-primary-dark dark:text-primary transition text-sm">
           {owner.name}{" "}
-          <span className="text-xs text-secondary-dark">commented on</span>
+          <span className="text-xs text-secondary-dark dark:text-gray-300">
+            commented on
+          </span>
         </p>
 
         <a
           href={"/" + belongsTo.slug}
           target="_blank"
           rel="noreferrer noopener"
-          className="text-secondary-dark hover:underline"
+          className="text-secondary-dark dark:text-gray-300 hover:underline"
         >
           <div className="flex items-center space-x-2 text-sm">
             <BsBoxArrowUpRight size={12} />

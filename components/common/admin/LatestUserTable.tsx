@@ -13,7 +13,7 @@ const LatestUserTable: FC<Props> = ({ users }): JSX.Element => {
     <div>
       <table className="w-full text-left text-primary-dark, dark:text-primary">
         <tbody>
-          <tr className="text-left bg-[#4E0715] text-primary min-w-fit text-sm">
+          <tr className="text-left bg-[#1F0309] text-primary min-w-fit text-sm">
             <th className="p-2">Profile</th>
             <th className="p-2">Email</th>
             <th className="p-2">Provider</th>

@@ -16,6 +16,8 @@ import LikeHeart from "./LikeHeart";
 interface Props {
   comment: CommentResponse;
   showControls?: boolean;
+  busy?: boolean;
+  selected?: boolean;
   onUpdateSubmit?(content: string): void;
   onReplySubmit?(content: string): void;
   onDeleteClick?(): void;
@@ -29,6 +31,8 @@ const CommentCard: FC<Props> = ({
   onDeleteClick,
   onLikeClicked,
   showControls = false,
+  busy,
+  selected,
 }): JSX.Element => {
   const { owner, content, createdAt, likedByOwner, likes, chiefComment } =
     comment;
@@ -86,6 +90,8 @@ const CommentCard: FC<Props> = ({
               liked={likedByOwner}
               label={likes + ""}
               onClick={onLikeClicked}
+              busy={busy}
+              selected={selected}
             />
             {chiefComment && (
               <Button onClick={handleOnReplyClick}>
