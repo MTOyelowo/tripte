@@ -20,7 +20,7 @@ const PostCard: FC<Props> = ({
 }): JSX.Element => {
   const { title, slug, meta, tags, thumbnail, createdAt, category } = post;
   return (
-    <div className="justify-center items-center bg-primary dark:bg-primary-dark flex flex-row border-b dark:border-gray-700 p-4 space-x-4 w-full my-2 even:md:border-l md:border-b-0">
+    <div className="justify-center items-center bg-primary dark:bg-primary-dark transition flex flex-row border-b dark:border-gray-700 p-4 space-x-4 w-full my-2 even:md:border-l md:border-b-0">
       <div className="rounded">
         {!thumbnail ? (
           <div className="w-full h-full flex items-center justify-center text-secondary-dark opacity-50 font-semibold italic">
@@ -40,7 +40,7 @@ const PostCard: FC<Props> = ({
       {/*Post Info*/}
       <div className="justify-center flex-1 flex flex-col">
         <Link href={"/" + slug}>
-          <div className="flex items-center justify-between text-xs sm:text-sm text-primary-dark dark:text-primary">
+          <div className="flex items-center justify-between text-xs sm:text-sm text-primary-dark dark:text-primary transition">
             <div className="flex items-center space-x-2">
               <span className="text-[#DC143C] font-medium text-xs">
                 {category}
