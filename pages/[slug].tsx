@@ -131,20 +131,28 @@ const SinglePost: NextPage<Props> = ({ post }) => {
           <AuthorInfo profile={JSON.parse(author)} />
         </div>
 
-        <div className="pt-5">
-          <h3 className="text-xl font-semibold bg-gradient-to-tr from-[#8D0D27] to-[#FACAD4] text-primary p-2 mb-4 transition rounded-lg">
+        <div className="mt-10 shadow-md border border-gray-50 rounded-lg text-primary-dark dark:text-gray-200 transition dark:border-gray-800 dark:shadow-gray-800 p-2">
+          <h3 className="text-xl font-semibold border-b dark:border-b-gray-800 p-2 mb-4 transition ">
             Related Posts:
           </h3>
-          <div className="flex flex-col space-y-4 odd:bg-white even:bg-[#FCDCE2] hover:scale-95">
-            {relatedPosts.map((post) => {
-              return (
-                <Link href={post.slug} key={post.id}>
-                  <span className="font-semibold text-primary-dark dark:text-primary hover:underline">
-                    {post.title}
-                  </span>
-                </Link>
-              );
-            })}
+          <div className="flex flex-col space-y-4">
+            {relatedPosts.length ? (
+              relatedPosts.map((post) => {
+                return (
+                  <Link
+                    href={post.slug}
+                    key={post.id}
+                    className="font-semibold border-b border-b-[#fabac7] dark:border-b-gray-800 hover:scale-95 transition"
+                  >
+                    <span className="">{post.title}</span>
+                  </Link>
+                );
+              })
+            ) : (
+              <h1 className="text-center font-semibold text-gray-500 animate-pulse">
+                Sorry...No Related Post Available!!!
+              </h1>
+            )}
           </div>
         </div>
 

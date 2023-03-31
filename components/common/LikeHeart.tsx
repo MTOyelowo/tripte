@@ -68,7 +68,7 @@ const LikeHeart: FC<Props> = ({
     >
       {likeIcon}
 
-      <span className="p-2">{label}</span>
+      <span className="pl-2 text-sm">{label}</span>
     </button>
   );
 };

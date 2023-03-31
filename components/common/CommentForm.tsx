@@ -47,7 +47,7 @@ const CommentForm: FC<Props> = ({
         </h1>
       ) : null}
       <EditorContent
-        className="min-h-[200px] border border-secondary-dark rounded p-2"
+        className="min-h-[200px] border border-gray-200 dark:border-gray-800 rounded-2xl p-2"
         editor={editor}
       />
       <div className="sm:flex justify-end py-3">
