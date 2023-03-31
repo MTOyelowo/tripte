@@ -63,7 +63,7 @@ const LikeHeart: FC<Props> = ({
   return (
     <button
       type="button"
-      className="text-primary-dark dark:text-primary flex -space-x-1 outline-none "
+      className="text-primary-dark dark:text-primary flex -space-x-1 outline-none items-center"
       onClick={onClick}
     >
       {likeIcon}

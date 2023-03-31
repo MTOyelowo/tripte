@@ -16,7 +16,7 @@ const ActionButton: FC<Props> = ({
 }): JSX.Element => {
   return (
     <button
-      className="text-highlight-dark bg-gradient-to-tr from-[#8D0D27] to-[#f6486d] px-6 py-2 font-semibold hover:scale-[0.97] duration-100 rounded w-full flex items-center justify-center space-x-2 transition"
+      className="text-highlight-dark bg-[#8D0D27] px-6 py-2 font-semibold hover:scale-[0.97] duration-100 rounded w-full flex items-center justify-center space-x-2 transition"
       onClick={onClick}
       disabled={disabled}
     >

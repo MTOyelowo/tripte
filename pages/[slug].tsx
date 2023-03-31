@@ -135,7 +135,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
           <h3 className="text-xl font-semibold bg-gradient-to-tr from-[#8D0D27] to-[#FACAD4] text-primary p-2 mb-4 transition rounded-lg">
             Related Posts:
           </h3>
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 odd:bg-white even:bg-[#FCDCE2] hover:scale-95">
             {relatedPosts.map((post) => {
               return (
                 <Link href={post.slug} key={post.id}>
