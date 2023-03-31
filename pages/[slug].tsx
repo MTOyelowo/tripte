@@ -132,7 +132,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
         </div>
 
         <div className="pt-5">
-          <h3 className="text-xl font-semibold bg-[#DC143C] text-primary p-2 mb-4 transition">
+          <h3 className="text-xl font-semibold bg-gradient-to-tr from-[#8D0D27] to-[#FACAD4] text-primary p-2 mb-4 transition rounded-lg">
             Related Posts:
           </h3>
           <div className="flex flex-col space-y-4">

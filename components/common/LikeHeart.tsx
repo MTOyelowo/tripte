@@ -23,22 +23,22 @@ const LikeHeart: FC<Props> = ({
   const likeIcon = liked ? (
     <div className={animateLike ? "animate-bounce" : "animate-none"}>
       <RiHeartFill
-        size={36}
+        size={26}
         className={
           animateLike
-            ? "hover:bg-[#F0607D] p-[5px] transition-colors rounded-full text-[#DC143C] hover:text-white animate-wiggle"
-            : "hover:bg-[#F0607D] p-[5px] transition-colors rounded-full text-[#DC143C] hover:text-white animate-none"
+            ? "transition-colors rounded-full text-[#DC143C] animate-wiggle hover:scale-90"
+            : "transition-colors rounded-full text-[#DC143C] animate-none hover:scale-90"
         }
       />
     </div>
   ) : (
     <div className={animateLike ? "animate-bounce" : "animate-none"}>
       <RiHeartLine
-        size={36}
+        size={26}
         className={
           animateLike
-            ? "animate-wiggle hover:bg-[#F0607D] p-[5px] hover:text-white rounded-full"
-            : "animate-none hover:bg-[#F0607D] p-[5px] hover:text-white rounded-full"
+            ? "animate-wiggle rounded-full hover:scale-90"
+            : "animate-none hover:scale-90"
         }
       />
     </div>
@@ -52,7 +52,7 @@ const LikeHeart: FC<Props> = ({
     if (animateLike) {
       timerId.current = setTimeout(() => {
         setAnimateLike(false);
-      }, 2000);
+      }, 3000);
     }
 
     return () => {
@@ -63,10 +63,10 @@ const LikeHeart: FC<Props> = ({
   return (
     <button
       type="button"
-      className="text-primary-dark dark:text-primary flex -space-x-2 outline-none "
+      className="text-primary-dark dark:text-primary flex -space-x-1 outline-none "
       onClick={onClick}
     >
-      {busy ? <BiLoader className="animate-spin" /> : likeIcon}
+      {likeIcon}
 
       <span className="p-2">{label}</span>
     </button>

@@ -17,32 +17,30 @@ interface Props {
 const AuthorInfo: FC<Props> = ({ profile }): JSX.Element => {
   const { name, message, image, facebook, twitter } = profile;
   return (
-    <div className="p-2 bg-[#FDEDF1] dark:bg-[#DC143C] rounded-2xl flex font-serif transition">
-      {/*Profile Icons*/}
-      <div className="w-12">
-        <div className="aspect-square relative">
-          <Image src={image} alt={name} fill className="rounded-full" />
+    <div className="bg-gradient-to-tr from-[#8D0D27]  to-[#FACAD4] p-4 flex justify-center rounded-lg">
+      <div className="p-2 bg-white rounded-2xl flex font-serif transition backdrop-blur-sm w-[90%] sm-w-[95%] shadow-md backdrop:filter border-l-[0.5px] border-b-[0.5px] border-l-slate-50 border-gray-200 bg-opacity-30">
+        {/*Profile Icons*/}
+        <div className="w-12">
+          <div className="aspect-square relative">
+            <Image src={image} alt={name} fill className="rounded-full" />
+          </div>
         </div>
-      </div>
-      {/*Profile Name Message*/}
-      <div className="ml-2 flex-1">
-        <h4 className="font-semibold text-primary-dark dark:text-primary">
-          {name}
-        </h4>
-        <p className="text-primary-dark dark:text-primary opacity-90">
-          {message}
-        </p>
-        <p className="text-primary-dark dark:text-primary opacity-90">
-          You can find {name.split(" ")[0]} on{" "}
-          <a className="font-semibold text-blue-400" href={twitter}>
-            twitter
-          </a>{" "}
-          or{" "}
-          <a className="font-semibold text-blue-400" href={facebook}>
-            facebook
-          </a>
-          .
-        </p>
+        {/*Profile Name Message*/}
+        <div className="ml-2 flex-1 text-gray-900">
+          <h4 className="font-semibold">{name}</h4>
+          <p className="">{message}</p>
+          <p className="">
+            You can find {name.split(" ")[0]} on{" "}
+            <a className="font-semibold text-blue-700" href={twitter}>
+              twitter
+            </a>{" "}
+            or{" "}
+            <a className="font-semibold text-blue-700" href={facebook}>
+              facebook
+            </a>
+            .
+          </p>
+        </div>
       </div>
     </div>
   );
