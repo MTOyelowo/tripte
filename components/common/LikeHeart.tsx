@@ -23,7 +23,7 @@ const LikeHeart: FC<Props> = ({
   const likeIcon = liked ? (
     <div className={animateLike ? "animate-bounce" : "animate-none"}>
       <RiHeartFill
-        size={26}
+        size={24}
         className={
           animateLike
             ? "transition-colors rounded-full text-[#DC143C] animate-wiggle hover:scale-90"
@@ -34,7 +34,7 @@ const LikeHeart: FC<Props> = ({
   ) : (
     <div className={animateLike ? "animate-bounce" : "animate-none"}>
       <RiHeartLine
-        size={26}
+        size={24}
         className={
           animateLike
             ? "animate-wiggle rounded-full hover:scale-90"

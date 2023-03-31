@@ -142,7 +142,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
                   <Link
                     href={post.slug}
                     key={post.id}
-                    className="font-semibold border-b border-b-[#fabac7] dark:border-b-gray-800 hover:scale-95 transition"
+                    className="font-semibold border-b border-b[#fabac7] dark:border-b-gray-800 hover:scale-95 transition"
                   >
                     <span className="">{post.title}</span>
                   </Link>
