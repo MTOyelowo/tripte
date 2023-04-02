@@ -114,7 +114,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
           <Share url={host + slug} />
         </div>
 
-        <div className="prose prose-lg dark:prose-invert max-w-full mx-auto text-justify">
+        <div className="prose prose-lg dark:prose-invert max-w-full mx-auto text-justify text-sm md:text-base">
           {parse(content)}
         </div>
 

@@ -123,7 +123,7 @@ const Input: FC<{
         value={value}
         type="text"
         placeholder={placeholder}
-        className={classnames(commonInput, "italic pl-10")}
+        className={classnames(commonInput, "italic pl-12")}
         onChange={onChange}
       />
     </label>
@@ -147,7 +147,7 @@ const CategoryInput: FC<{
         value={value}
         type="text"
         placeholder={placeholder}
-        className={classnames(commonInput, "italic pl-[70px]")}
+        className={classnames(commonInput, "italic pl-20")}
         onChange={onChange}
       />
     </label>

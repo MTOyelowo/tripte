@@ -15,6 +15,7 @@ import {
   BsLink45Deg,
   BsYoutube,
 } from "react-icons/bs";
+import { GrSuperscript, GrSubscript } from "react-icons/gr";
 import DropdownOptions from "../../common/DropdownOptions";
 import { getFocusedEditor } from "../EditorUtils";
 import Button from "./Button";
@@ -114,6 +115,18 @@ const ToolBar: FC<Props> = ({
           onClick={() => getFocusedEditor(editor).toggleStrike().run()}
         >
           <BsTypeStrikethrough />
+        </Button>
+        <Button
+          active={editor.isActive("superscript")}
+          onClick={() => getFocusedEditor(editor).toggleSuperscript().run()}
+        >
+          <GrSuperscript />
+        </Button>
+        <Button
+          active={editor.isActive("subscript")}
+          onClick={() => getFocusedEditor(editor).toggleSubscript().run()}
+        >
+          <GrSubscript />
         </Button>
       </div>
 

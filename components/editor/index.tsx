@@ -3,6 +3,8 @@ import { useEditor, EditorContent, getMarkRange, Range } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import Placeholder from "@tiptap/extension-placeholder";
+import Superscript from "@tiptap/extension-superscript";
+import Subscript from "@tiptap/extension-subscript";
 import Link from "@tiptap/extension-link";
 import TipTapImage from "@tiptap/extension-image";
 import ToolBar from "./ToolBar";
@@ -75,6 +77,16 @@ const Editor: FC<Props> = ({
         openOnClick: false,
         HTMLAttributes: {
           target: "",
+        },
+      }),
+      Superscript.configure({
+        HTMLAttributes: {
+          class: "italic",
+        },
+      }),
+      Subscript.configure({
+        HTMLAttributes: {
+          class: "italic",
         },
       }),
       Placeholder.configure({ placeholder: "Type Something" }),
