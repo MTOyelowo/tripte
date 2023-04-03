@@ -57,7 +57,7 @@ const PostCard: FC<Props> = ({
             {trimText(meta, 100)}
           </p>
           <div className="flex items-center justify-between text-sm text-primary-dark dark:text-primary">
-            <div className="flex items-center space-x-2 italic text-[10px] text-gray-400">
+            <div className="flex items-center space-x-2 italic text-[7px] text-gray-400">
               {tags.map((tag, index) => (
                 <span key={tag + index}>#{tag}</span>
               ))}
