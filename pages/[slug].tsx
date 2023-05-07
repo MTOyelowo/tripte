@@ -101,7 +101,7 @@ const SinglePost: NextPage<Props> = ({ post }) => {
           </h1>
         </div>
 
-        <div className="flex items-center justify-between py-2 text-secondary-dark dark:text-secondary-light italic text-[9px]">
+        <div className="flex items-center justify-between py-2 text-secondary-dark dark:text-secondary-light italic text-[11px]">
           <div className="space-x-2">
             {tags.map((t, index) => (
               <span key={t + index}>#{t}</span>
