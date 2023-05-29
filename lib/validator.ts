@@ -1,6 +1,16 @@
 import Joi, { ObjectSchema } from "joi"
 import { isValidObjectId } from "mongoose";
 
+const categories = ["All",
+    "Poetry",
+    "Article",
+    "Picture",
+    "Essay",
+    "Opinion",
+    "Story",
+    "Play",
+    "Thought", "Podcast"]
+
 export const errorMessages = {
     INVALID_TITLE: "Title is missing!",
     INVALID_TAGS: "Tags must be array of strings!",
@@ -19,10 +29,18 @@ export const postValidationSchema = Joi.object().keys({
         "string.empty": errorMessages.INVALID_CONTENT,
         "any.required": errorMessages.INVALID_CONTENT
     }),
-    category: Joi.string().required().messages({
-        "string.empty": errorMessages.INVALID_CATEGORY,
-        "any.required": errorMessages.INVALID_CATEGORY
-    }),
+    category: Joi.string()
+        .required()
+        .custom((value, helper) => {
+            if (
+                !categories.includes(value)
+            )
+                return helper.error("any.invalid");
+            return true;
+        }).messages({
+            "string.empty": errorMessages.INVALID_CATEGORY,
+            "any.required": errorMessages.INVALID_CATEGORY
+        }),
     slug: Joi.string().required().messages({
         "string.empty": errorMessages.INVALID_SLUG,
         "any.required": errorMessages.INVALID_SLUG
