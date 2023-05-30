@@ -33,8 +33,8 @@ const ScrollNav: FC<Props> = ({ selectCategory }): JSX.Element => {
   const [scrollEnd, setscrollEnd] = useState<boolean>(false);
 
   const onCategoryClick = (category: any) => {
-    selectCategory(category);
-    setActiveCategory(category);
+    selectCategory(category.value);
+    setActiveCategory(category.name);
   };
 
   //Slide click
@@ -101,7 +101,7 @@ const ScrollNav: FC<Props> = ({ selectCategory }): JSX.Element => {
                 <button
                   type="button"
                   onClick={() => {
-                    onCategoryClick(category.value);
+                    onCategoryClick(category);
                   }}
                   className={
                     activeCategory === category.name
