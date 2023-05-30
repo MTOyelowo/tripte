@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FC, useEffect, useState } from "react";
+import { ChangeEventHandler, FC, useEffect, useRef, useState } from "react";
 import { useEditor, EditorContent, getMarkRange, Range } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
@@ -16,6 +16,7 @@ import SEOForm, { SeoResult } from "./SEOForm";
 import ActionButton from "../common/ActionButton";
 import ThumbnailSelector from "./ThumbnailSelector";
 import { BiTargetLock } from "react-icons/bi";
+import AlertModal from "../common/AlertModal";
 
 export interface FinalPost extends SeoResult {
   id?: string;
@@ -29,6 +30,12 @@ interface Props {
   btnTitle?: string;
   busy?: boolean;
   onSubmit(post: FinalPost): void;
+  showUpdateSuccess?: boolean;
+  showUpdateFail?: boolean;
+  showPostSuccess?: boolean;
+  showPostFail?: boolean;
+  failMessage?: string;
+  postFailMessage?: string;
 }
 3;
 const Editor: FC<Props> = ({
@@ -36,6 +43,12 @@ const Editor: FC<Props> = ({
   btnTitle = "Submit",
   busy = false,
   onSubmit,
+  showUpdateSuccess,
+  showUpdateFail,
+  failMessage,
+  showPostSuccess,
+  showPostFail,
+  postFailMessage,
 }): JSX.Element => {
   const [selectionRange, setSelectionRange] = useState<Range>();
   const [showGallery, setShowGallery] = useState(false);
@@ -164,6 +177,28 @@ const Editor: FC<Props> = ({
     <>
       <div className="p-3 dark:bg-primary-dark bg-primary transition">
         <div className="sticky top-0 z-10 dark:bg-primary-dark bg-primary">
+          <div className="absolute -top-5 w-full flex items-center justify-center z-10">
+            {showUpdateSuccess && (
+              <AlertModal text="Update Successful" status="success" />
+            )}
+            {showUpdateFail && (
+              <AlertModal
+                text="Update Failed"
+                secondaryText={failMessage}
+                status="fail"
+              />
+            )}
+            {showPostSuccess && (
+              <AlertModal text="Post Added" status="success" />
+            )}
+            {showPostFail && (
+              <AlertModal
+                text="Post Failed"
+                secondaryText={postFailMessage}
+                status="fail"
+              />
+            )}
+          </div>
           {/* Thumbnail Selector and Submit Button */}
           <div className="flex items-center justify-between mb-3">
             <ThumbnailSelector
