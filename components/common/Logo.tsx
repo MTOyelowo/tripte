@@ -5,7 +5,7 @@ interface Props {
   className?: string;
 }
 const Logo: FC<Props> = ({ className }) => (
-  <Image src="/tripte.svg" height={40} width={40} alt="" />
+  <Image src="/tripte.svg" height={60} width={60} alt="" />
 );
 
 export default Logo;

@@ -2,8 +2,11 @@ import axios from "axios";
 import { FC, ReactNode, useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PostDetail } from "../../utils/types";
+import useLoading from "../../hooks/useLoading";
 import ConfirmModal from "./ConfirmModal";
 import PostCard from "./PostCard";
+import { ImSpinner7 } from "react-icons/im";
+import PostSkeleton from "./PostSkeleton";
 
 interface Props {
   posts: PostDetail[];
@@ -30,6 +33,8 @@ const InfiniteScrollPosts: FC<Props> = ({
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [postToRemove, setPostToRemove] = useState<PostDetail | null>(null);
   const [filteredPosts, setFilteredPosts] = useState<PostDetail[] | null>([]);
+
+  const isLoading = useLoading();
 
   const handleOnDeleteClick = (post: PostDetail) => {
     setPostToRemove(post);
@@ -79,9 +84,9 @@ const InfiniteScrollPosts: FC<Props> = ({
         loader={loader || defaultLoader}
       >
         <div className="max-w-4xl mx-auto p-3">
-          <div className="flex-row md:grid sm:gap-4 md:grid-cols-2 md:gap-4 pb-20">
-            {filteredPosts?.length ? (
-              filteredPosts?.map((post, index) => (
+          {filteredPosts?.length ? (
+            <div className="flex-row md:grid sm:gap-4 md:grid-cols-2 md:gap-4 pb-20">
+              {filteredPosts?.map((post, index) => (
                 <PostCard
                   key={post.slug}
                   post={post}
@@ -89,15 +94,24 @@ const InfiniteScrollPosts: FC<Props> = ({
                   onDeleteClick={() => handleOnDeleteClick(post)}
                   busy={post.id === postToRemove?.id && removing}
                 />
-              ))
-            ) : (
-              <div className="flex items-center justify-center w-full h-full">
+              ))}
+            </div>
+          ) : (
+            <div className="flex items-center justify-center w-full h-full">
+              {isLoading ? (
+                <div className="flex-row md:grid sm:gap-4 md:grid-cols-2 md:gap-4 pb-20">
+                  <PostSkeleton />
+                  <PostSkeleton />
+                  <PostSkeleton />
+                  <PostSkeleton />
+                </div>
+              ) : (
                 <h1 className="font-semibold text-gray-600 animate-pulse text-center">
                   Sorry!!! No {filterCategory} post yet...
                 </h1>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          )}
         </div>
       </InfiniteScroll>
       <ConfirmModal

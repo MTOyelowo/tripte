@@ -14,7 +14,54 @@
     background: rgb(202, 181, 226)
   }
 
+:root {
+    --gradient-color-1: #FF627C;
+    --gradient-color-2: #0055D1;
+    --gradient-color-3: #FFE5B4;
+    --gradient-color-4: #800080;
+    --gradient-color-5: #FF627C;
+}
+  
+@keyframes swimmingAnimation {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    25%, 75% {
+      background-position: 0% 25%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    75%, 25% {
+      background-position: 25% 0%;
+    }
+    100%, 0% {
+      background-position: 100% 0%;
+    }
+  }
+  
+  .swimming-bg {
+    animation: swimmingAnimation 20s linear infinite;
+    background-image: linear-gradient(to bottom, var(--gradient-color-4), var(--gradient-color-1), var(--gradient-color-2), var(--gradient-color-3), var(--gradient-color-4), var(--gradient-color-5), var(--gradient-color-3));
+    background-size: 200% 200%;
+    transition: background-position ease-in-out;
+  }
+  
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "PoetsenOne";
+  src: url("/fonts/PoetsenOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Freeman";
+  src: url("/fonts/Freeman-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

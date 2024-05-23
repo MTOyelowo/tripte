@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const THEME_MODE = "theme-mode";
 const defaultTheme = "light";
@@ -44,7 +44,7 @@ const useDarkMode = () => {
         }
     }, [])
 
-    return { toggleTheme };
+    return { toggleTheme, readThemeFromLs };
 
 };
 

@@ -11,7 +11,7 @@ interface Props {
 const successClass =
   "w-[500px] h-[70px] flex justify-center items-center mt-5 rounded-xl text-xl font-semibold bg-blue-50 border-2 border-blue-300 text-[#133746]";
 const failClass =
-  "w-[500px] h-[70px] flex justify-center items-center mt-5 rounded-xl text-xl font-semibold bg-red-50 border-2 border-red-300 text-[#370000]";
+  "w-[500px] h-[70px] flex justify-center items-center mt-5 rounded-xl text-xl font-semibold bg-primary border-2 border-red-300 text-[#370000]";
 
 const AlertModal: FC<Props> = ({
   text,

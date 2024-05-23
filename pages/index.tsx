@@ -5,7 +5,7 @@ import {
   NextPage,
 } from "next";
 import { useSession } from "next-auth/react";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import InfiniteScrollPosts from "../components/common/InfiniteScrollPosts";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import useAuth from "../hooks/useAuth";
@@ -13,6 +13,7 @@ import { formatPosts, readPostsFromDb } from "../lib/utils";
 import { filterPosts } from "../utils/helper";
 import { PostDetail, UserProfile } from "../utils/types";
 import ScrollNav from "@/components/common/nav/ScrollNav";
+import { useRouter } from "next/router";
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
@@ -20,6 +21,8 @@ let pageNo = 0;
 const limit = 9;
 
 const Home: NextPage<Props> = ({ posts }) => {
+  const router = useRouter();
+
   const [postsToRender, setPostsToRender] = useState(posts);
   const [hasMorePosts, setHasMorePosts] = useState(posts.length >= limit);
   const [category, setCategory] = useState<string>("All");

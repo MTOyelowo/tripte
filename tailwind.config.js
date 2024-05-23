@@ -35,6 +35,23 @@ module.exports = {
       animation: {
         wiggle: "wiggle 4s ease-in-out infinite",
       },
+      fontSize: {
+        responsiveListItem: "clamp(0.25rem, 2.5vw, 4rem)",
+        responsivePoem: "clamp(0.35rem, 3.5vw, 5rem)",
+        responsiveParagraph: "clamp(0.3rem, 3vw, 4.5rem)",
+        responsiveSideline: "clamp(1rem, 5vw, 8rem)",
+        responsiveHeadline: "clamp(5rem, 24.5vw, 40rem)",
+        dynamic: "clamp(8rem, 2vw + 8rem, 24rem)",
+      },
+      fontFamily: {
+        poetsen: ["PoetsenOne", "sans-serif"],
+        freeman: ["Freeman", "sans-serif"],
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
     },
   },
   plugins: [
