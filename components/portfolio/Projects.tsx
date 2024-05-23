@@ -101,7 +101,7 @@ const Projects: FC<Props> = (props): JSX.Element => {
       <div className="flex items-center justify-between w-full pl-4 pr-2 mt-16 md:mt-10 text-gray-800 dark:text-primary ">
         <button
           onClick={handlePrev}
-          className="p-2 md:p-3 bg-gray-700 dark:bg-slate-400 text-white text-lg md:text-xl rounded-xl"
+          className="p-2 md:p-3 bg-gray-700 dark:bg-slate-700 text-white text-lg md:text-xl rounded-xl"
         >
           <HiChevronLeft />
         </button>
@@ -110,7 +110,7 @@ const Projects: FC<Props> = (props): JSX.Element => {
         </div>
         <button
           onClick={handleNext}
-          className="p-2 md:p-3 bg-gray-700 dark:bg-slate-400 text-white text-lg md:text-xl rounded-xl"
+          className="p-2 md:p-3 bg-gray-700 dark:bg-slate-700 text-white text-lg md:text-xl rounded-xl"
         >
           <HiChevronRight />
         </button>

@@ -104,12 +104,12 @@ const LinkItem: FC<Props> = ({
         {options.length > 0 && isOpen ? <FaChevronUp /> : <FaChevronDown />}
       </div>
       {options.length > 0 && isOpen ? (
-        <ul className="absolute right-0 md:right-2 top-5 md:top-9 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+        <ul className="absolute right-0 md:right-2 md:top-3 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
           {options
             ? options?.map((option, index) => (
                 <li
                   key={index}
-                  className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                  className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer hover:rounded-lg"
                 >
                   <Link href={option.href}>{option.label}</Link>
                 </li>
