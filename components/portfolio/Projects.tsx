@@ -4,7 +4,7 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
 const projects: ProjectCardProps[] = [
   {
-    imageSrc: "/images/topratehero.png",
+    imageSrc: "/images/cropped-topratehero.png",
     title: "TopRate Transfer",
     githubLinks: [],
     liveLink: "https://topratetransfer.com.au/",
@@ -18,7 +18,7 @@ const projects: ProjectCardProps[] = [
     ],
   },
   {
-    imageSrc: "/images/spheresed.png",
+    imageSrc: "/images/cropped-spheresed.png",
     title: "SpheresED Junior",
     githubLinks: [
       {
@@ -38,7 +38,7 @@ const projects: ProjectCardProps[] = [
     ],
   },
   {
-    imageSrc: "/images/tripte.png",
+    imageSrc: "/images/cropped-tripte.png",
     title: "Tripte Media",
     githubLinks: [
       {
@@ -58,7 +58,7 @@ const projects: ProjectCardProps[] = [
     ],
   },
   {
-    imageSrc: "/images/zheeta.png",
+    imageSrc: "/images/cropped-zheeta.png",
     title: "Zheeta",
     githubLinks: [],
     liveLink: "https://zheeta.com/",
@@ -92,13 +92,13 @@ const Projects: FC<Props> = (props): JSX.Element => {
   };
 
   return (
-    <div className="relative flex flex-col gap-8 md:gap-10 py-16 px-4 md:px-0 w-full md:w-[70%] mx-auto ">
+    <div className="relative flex flex-col gap-8 md:gap-10 py-16 px-4 md:px-0 w-full md:w-[70%] mx-auto">
       <div className="border-b-2 border-gray-700 dark:border-gray-300 w-fit font-poetsen">
         <h2 className="text-left text-4xl leading-6 text-gray-700 dark:text-gray-300 mb-3">
           Projects
         </h2>
       </div>
-      <div className="flex items-center justify-between w-full pl-4 pr-2 mt-16 md:mt-10 text-gray-800 dark:text-primary ">
+      <div className="flex items-center justify-between w-full mt-16 md:mt-10 text-gray-800 dark:text-primary ">
         <button
           onClick={handlePrev}
           className="p-2 md:p-3 bg-gray-700 dark:bg-slate-700 text-white text-lg md:text-xl rounded-xl"

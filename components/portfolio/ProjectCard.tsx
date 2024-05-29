@@ -35,7 +35,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="flex flex-col w-[300px] md:w-[400px] bg-white dark:bg-primary-dark rounded-lg shadow-lg dark:shadow-gray-500 font-freeman text-secondary-dark dark:text-secondary-light">
+    <div className="flex flex-col w-[250px] sm:w-[300px] md:w-[400px] bg-white dark:bg-primary-dark rounded-lg shadow-lg dark:shadow-gray-500 font-freeman text-secondary-dark dark:text-secondary-light">
       <div className="relative w-full aspect-video object-scale-down rounded-t-lg">
         <Image src={imageSrc} alt={title} fill className="rounded-t-lg" />
       </div>
@@ -104,7 +104,7 @@ const LinkItem: FC<Props> = ({
         {options.length > 0 && isOpen ? <FaChevronUp /> : <FaChevronDown />}
       </div>
       {options.length > 0 && isOpen ? (
-        <ul className="absolute right-0 md:right-2 md:top-3 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+        <ul className="absolute left-0 md:right-2 top-3 md:top-3 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-10">
           {options
             ? options?.map((option, index) => (
                 <li

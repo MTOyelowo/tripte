@@ -19,8 +19,8 @@ const ContactForm: FC = () => {
   }, [showAlert]);
 
   return (
-    <section className="py-10 bg-gray-100 dark:bg-zinc-900 font-freeman">
-      <div className="flex justify-center">
+    <section className="py-10 px-8 bg-gray-100 dark:bg-zinc-900 font-freeman">
+      <div className="w-full flex justify-center text-black dark:text-white">
         <div className="flex flex-col gap-16 w-full md:w-3/4 lg:w-2/3">
           <div className="border-b-2 border-gray-700 dark:border-gray-300 w-fit">
             <h2 className="text-left text-4xl leading-6 text-gray-700 dark:text-gray-300 mb-3">

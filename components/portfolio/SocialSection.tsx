@@ -14,7 +14,7 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { href: "", icon: FaGithubSquare },
+  { href: "https://github.com/MTOyelowo", icon: FaGithubSquare },
   { href: "", icon: FaFacebookSquare },
   { href: "", icon: FaInstagramSquare },
   { href: "", icon: FaSquareXTwitter },
@@ -26,7 +26,7 @@ const SocialSection: FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
           <div className="relative w-full max-w-5xl">
-            <div className="flex justify-between gap-10 items-center relative bg-gray-100 dark:bg-zinc-900">
+            <div className="flex justify-between md:gap-10 items-center relative bg-gray-100 dark:bg-zinc-900 w-full">
               <div className="flex items-center justify-center md:justify-between gap-10 w-full">
                 {socialLinks.map((link, index) => (
                   <a
